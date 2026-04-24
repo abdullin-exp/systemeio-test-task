@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="product.identifier.not_blank">
+                <source>product.identifier.not_blank</source>
+                <target>Product identifier not passed.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="product.identifier.ulid">
+                <source>product.identifier.ulid</source>
+                <target>Invalid product identifier.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="product.not_found">
+                <source>product.not_found</source>
+                <target>Product not found.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="taxNumber.not_blank">
+                <source>taxNumber.not_blank</source>
+                <target>Tax number not passed.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="taxNumber.invalid_format">
+                <source>taxNumber.invalid_format</source>
+                <target>Invalid tax number format.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="taxNumber.unknown_country">
+                <source>taxNumber.unknown_country</source>
+                <target>Unsupported country code.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="couponCode.not_blank">
+                <source>couponCode.not_blank</source>
+                <target>Coupon code not passed.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="couponCode.too_long">
+                <source>couponCode.too_long</source>
+                <target>Coupon code is too long.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="coupon.not_found">
+                <source>coupon.not_found</source>
+                <target>Coupon not found.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="paymentProcessor.not_blank">
+                <source>paymentProcessor.not_blank</source>
+                <target>Payment processor not passed.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="paymentProcessor.unsupported">
+                <source>paymentProcessor.unsupported</source>
+                <target>Payment processor unsupported.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

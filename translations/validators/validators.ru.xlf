@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="product.identifier.not_blank">
+                <source>product.identifier.not_blank</source>
+                <target>Не передан идентификатор продукта.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="product.identifier.ulid">
+                <source>product.identifier.ulid</source>
+                <target>Невалидный идентификатор продукта.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="product.not_found">
+                <source>product.not_found</source>
+                <target>Товар не найден.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="taxNumber.not_blank">
+                <source>taxNumber.not_blank</source>
+                <target>Не передан налоговый номер.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="taxNumber.invalid_format">
+                <source>taxNumber.invalid_format</source>
+                <target>Невалидный налоговый номер.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="taxNumber.unknown_country">
+                <source>taxNumber.unknown_country</source>
+                <target>Неподдерживаемый код страны налогового номера.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="couponCode.not_blank">
+                <source>couponCode.not_blank</source>
+                <target>Не передан код купона.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="couponCode.too_long">
+                <source>couponCode.too_long</source>
+                <target>Код купона слишком длинный.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="coupon.not_found">
+                <source>coupon.not_found</source>
+                <target>Купон не найден.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="paymentProcessor.not_blank">
+                <source>paymentProcessor.not_blank</source>
+                <target>Не передан платежный провайдер.</target>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="ru" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="paymentProcessor.unsupported">
+                <source>paymentProcessor.unsupported</source>
+                <target>Платежный провайдер не поддерживается.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
