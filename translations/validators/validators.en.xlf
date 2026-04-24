@@ -50,14 +50,6 @@
     </file>
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="couponCode.not_blank">
-                <source>couponCode.not_blank</source>
-                <target>Coupon code not passed.</target>
-            </trans-unit>
-        </body>
-    </file>
-    <file source-language="en" datatype="plaintext" original="file.ext">
-        <body>
             <trans-unit id="couponCode.too_long">
                 <source>couponCode.too_long</source>
                 <target>Coupon code is too long.</target>

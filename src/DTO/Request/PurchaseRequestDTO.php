@@ -23,10 +23,9 @@ class PurchaseRequestDTO
     public string $taxNumber;
 
     #[SerializedName('couponCode')]
-    #[Assert\NotBlank(message: 'couponCode.not_blank')]
     #[Assert\Length(max: 50, maxMessage: 'couponCode.too_long')]
     #[CustomAssert\CouponExists]
-    public string $couponCode;
+    public ?string $couponCode = null;
 
     #[SerializedName('paymentProcessor')]
     #[Assert\NotBlank(message: 'paymentProcessor.not_blank')]

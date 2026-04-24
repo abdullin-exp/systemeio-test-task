@@ -50,14 +50,6 @@
     </file>
     <file source-language="ru" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="couponCode.not_blank">
-                <source>couponCode.not_blank</source>
-                <target>Не передан код купона.</target>
-            </trans-unit>
-        </body>
-    </file>
-    <file source-language="ru" datatype="plaintext" original="file.ext">
-        <body>
             <trans-unit id="couponCode.too_long">
                 <source>couponCode.too_long</source>
                 <target>Код купона слишком длинный.</target>
