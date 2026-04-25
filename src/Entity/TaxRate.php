@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'tax_rates')]
 class TaxRate
 {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(name: 'id', type: 'integer')]
@@ -21,5 +22,6 @@ class TaxRate
     public CountryCode $countryCode;
 
     #[ORM\Column(name: 'rate', type: 'integer')]
-    private int $rate;
+    public int $rate;
+
 }

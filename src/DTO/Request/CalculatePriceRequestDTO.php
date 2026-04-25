@@ -10,11 +10,12 @@ use App\Validator\Constraints as CustomAssert;
 
 class CalculatePriceRequestDTO
 {
+
     #[SerializedName('product')]
     #[Assert\NotBlank(message: 'product.identifier.not_blank')]
     #[Assert\Ulid(message: 'product.identifier.ulid')]
     #[CustomAssert\ProductExists]
-    public string $product;
+    public string $productId;
 
     #[SerializedName('taxNumber')]
     #[Assert\NotBlank(message: 'taxNumber.not_blank')]
@@ -25,4 +26,5 @@ class CalculatePriceRequestDTO
     #[Assert\Length(max: 50, maxMessage: 'couponCode.too_long')]
     #[CustomAssert\CouponExists]
     public ?string $couponCode = null;
+
 }

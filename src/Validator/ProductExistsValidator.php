@@ -10,10 +10,11 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class ProductExistsValidator extends ConstraintValidator
+final class ProductExistsValidator extends ConstraintValidator
 {
+
     public function __construct(
-        private ProductRepository $productRepository,
+        private readonly ProductRepository $productRepository,
     )
     {
     }
@@ -32,7 +33,9 @@ class ProductExistsValidator extends ConstraintValidator
             return;
         }
 
-        if (!$this->productRepository->find($value)) {
+        $product = $this->productRepository->find($value);
+
+        if (!$product) {
             $this->context
                 ->buildViolation($constraint->message)
                 ->addViolation();

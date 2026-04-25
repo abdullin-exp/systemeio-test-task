@@ -10,4 +10,14 @@ enum CountryCode: string
     case ITALY   = 'IT';
     case FRANCE  = 'FR';
     case GREECE  = 'GR';
+
+    public function taxNumberPatterns(): string
+    {
+        return match ($this) {
+            self::GERMANY => '/^DE\d{9}$/',
+            self::ITALY   => '/^IT\d{11}$/',
+            self::FRANCE  => '/^FR[A-Z]{2}\d{9}$/',
+            self::GREECE  => '/^GR\d{9}$/',
+        };
+    }
 }

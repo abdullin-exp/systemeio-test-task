@@ -11,11 +11,12 @@ use App\Validator\Constraints as CustomAssert;
 
 class PurchaseRequestDTO
 {
+
     #[SerializedName('product')]
     #[Assert\NotBlank(message: 'product.identifier.not_blank')]
     #[Assert\Ulid(message: 'product.identifier.ulid')]
     #[CustomAssert\ProductExists]
-    public string $product;
+    public string $productId;
 
     #[SerializedName('taxNumber')]
     #[Assert\NotBlank(message: 'taxNumber.not_blank')]
@@ -33,5 +34,6 @@ class PurchaseRequestDTO
         callback: [PaymentProcessor::class, 'cases'],
         message: 'paymentProcessor.unsupported'
     )]
-    public string $paymentProcessor;
+    public PaymentProcessor $paymentProcessor;
+
 }

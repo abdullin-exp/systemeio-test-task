@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'coupons')]
 class Coupon
 {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(name: 'id', type: 'integer')]
@@ -25,4 +26,5 @@ class Coupon
 
     #[ORM\Column(name: 'discount', type: 'integer')]
     public int $discount;
+
 }

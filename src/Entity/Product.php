@@ -13,6 +13,7 @@ use Symfony\Bridge\Doctrine\Types\UlidType;
 #[ORM\Table(name: 'products')]
 class Product
 {
+
     #[ORM\Id]
     #[ORM\Column(name: 'id', type: UlidType::NAME, unique: true)]
     #[ORM\GeneratedValue(strategy: 'CUSTOM')]
@@ -24,4 +25,5 @@ class Product
 
     #[ORM\Column(name: 'price', type: 'integer')]
     public int $price;
+
 }

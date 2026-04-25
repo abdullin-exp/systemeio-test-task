@@ -10,10 +10,11 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class CouponExistsValidator extends ConstraintValidator
+final class CouponExistsValidator extends ConstraintValidator
 {
+
     public function __construct(
-        private CouponRepository $couponRepository,
+        private readonly CouponRepository $couponRepository,
     )
     {
     }
@@ -32,7 +33,9 @@ class CouponExistsValidator extends ConstraintValidator
             return;
         }
 
-        if (!$this->couponRepository->find($value)) {
+        $coupon = $this->couponRepository->findOneBy(['code' => $value]);
+
+        if (!$coupon) {
             $this->context
                 ->buildViolation($constraint->message)
                 ->addViolation();
