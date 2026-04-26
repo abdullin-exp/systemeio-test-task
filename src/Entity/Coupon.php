@@ -18,7 +18,7 @@ class Coupon
     #[ORM\Column(name: 'id', type: 'integer')]
     public int $id;
 
-    #[ORM\Column(name: 'code', type: 'string', length: 50)]
+    #[ORM\Column(name: 'code', type: 'string', length: 50, unique: true)]
     public string $code;
 
     #[ORM\Column(name: 'type', length: 10, enumType: CouponType::class)]

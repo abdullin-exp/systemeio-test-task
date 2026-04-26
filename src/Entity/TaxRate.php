@@ -18,7 +18,7 @@ class TaxRate
     #[ORM\Column(name: 'id', type: 'integer')]
     public int $id;
 
-    #[ORM\Column(name: 'country_code', length: 2, enumType: CountryCode::class)]
+    #[ORM\Column(name: 'country_code', length: 2, unique: true, enumType: CountryCode::class)]
     public CountryCode $countryCode;
 
     #[ORM\Column(name: 'rate', type: 'integer')]
