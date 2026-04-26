@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Service\Payment;
+namespace App\Service\Payment\Adapters;
 
 use App\Enum\PaymentProcessor;
 use App\Exception\InternalException;
+use App\Service\Payment\PaymentProcessorInterface;
 use Systemeio\TestForCandidates\PaymentProcessor\StripePaymentProcessor;
 
 final readonly class StripePaymentAdapter implements PaymentProcessorInterface

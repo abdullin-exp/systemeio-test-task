@@ -3,6 +3,9 @@
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+imports:
+    - { resource: services/payment.yaml }
+
 parameters:
 
 services:
@@ -18,7 +21,33 @@ services:
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
+            - '../src/DataFixtures/'
+            - '../src/Story/'
+            - '../src/Service/Payment/PaymentProcessorFactory.php'
             - '../src/Kernel.php'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+when@dev:
+    services:
+        App\DataFixtures\:
+            resource: '../src/DataFixtures/'
+            tags:
+                - { name: doctrine.fixture.orm }
+
+        App\Story\:
+            resource: '../src/Story/'
+            tags: [ 'foundry.story' ]
+
+when@test:
+    services:
+        App\Tests\Resource\DataFixtures\:
+            resource:  '../tests/Resource/DataFixtures/'
+            tags:
+                - { name: doctrine.fixture.orm }
+
+        App\Tests\Resource\Story\:
+            resource: '%kernel.project_dir%/tests/Resource/Story/'
+            tags: [ 'foundry.story' ]
