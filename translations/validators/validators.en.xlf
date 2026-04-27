@@ -10,8 +10,8 @@
     </file>
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="product.identifier.ulid">
-                <source>product.identifier.ulid</source>
+            <trans-unit id="product.identifier.uuid">
+                <source>product.identifier.uuid</source>
                 <target>Invalid product identifier.</target>
             </trans-unit>
         </body>

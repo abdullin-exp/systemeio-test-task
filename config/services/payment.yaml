@@ -1,28 +1,13 @@
 services:
 
-    _defaults:
-        autowire: true
-        autoconfigure: true
-
     paypal.processor:
         class: Systemeio\TestForCandidates\PaymentProcessor\PaypalPaymentProcessor
+
+    Systemeio\TestForCandidates\PaymentProcessor\PaypalPaymentProcessor:
+        alias: paypal.processor
 
     stripe.processor:
         class: Systemeio\TestForCandidates\PaymentProcessor\StripePaymentProcessor
 
-    App\Service\Payment\Adapters\:
-        resource: '../../src/Service/Payment/Adapters/'
-        tags: [ 'app.payment_processor' ]
-
-    App\Service\Payment\PaymentProcessorFactory:
-        autowire: false
-        arguments:
-            $processors: !tagged_iterator app.payment_processor
-
-    App\Service\Payment\Adapters\PaypalPaymentAdapter:
-        arguments:
-            $processor: '@paypal.processor'
-
-    App\Service\Payment\Adapters\StripePaymentAdapter:
-        arguments:
-            $processor: '@stripe.processor'
+    Systemeio\TestForCandidates\PaymentProcessor\StripePaymentProcessor:
+        alias: stripe.processor

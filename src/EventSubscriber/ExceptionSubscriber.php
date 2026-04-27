@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
-use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Validator\Exception\ValidationFailedException;
 
@@ -27,15 +26,14 @@ final class ExceptionSubscriber implements EventSubscriberInterface
     {
         $exception = $event->getThrowable();
 
-        // обрабатываем ошибки валидации
-        if ($exception instanceof UnprocessableEntityHttpException) {
+        if ($exception instanceof HttpExceptionInterface) {
 
-            $previous = $exception->getPrevious();
+            $previousException = $exception->getPrevious();
 
-            if ($previous instanceof ValidationFailedException) {
+            if ($previousException instanceof ValidationFailedException) {
 
                 $errors = [];
-                foreach ($previous->getViolations() as $violation) {
+                foreach ($previousException->getViolations() as $violation) {
                     $errors[] = [
                         'message' => $violation->getMessage(),
                     ];
@@ -50,15 +48,12 @@ final class ExceptionSubscriber implements EventSubscriberInterface
 
                 return;
             }
-        }
-
-        if ($exception instanceof HttpExceptionInterface) {
 
             $event->setResponse(
                 new JsonResponse(
                     [
                         'errors' => [
-                            $exception->getMessage(),
+                            ['message' => $exception->getMessage()],
                         ],
                     ],
                     $exception->getStatusCode(),
@@ -72,12 +67,11 @@ final class ExceptionSubscriber implements EventSubscriberInterface
             new JsonResponse(
                 [
                     'errors' => [
-                        'Internal server error',
+                        ['message' => 'Internal server error'],
                     ],
                 ],
                 Response::HTTP_INTERNAL_SERVER_ERROR,
             )
         );
-
     }
 }

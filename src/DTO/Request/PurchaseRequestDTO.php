@@ -14,7 +14,7 @@ class PurchaseRequestDTO
 
     #[SerializedName('product')]
     #[Assert\NotBlank(message: 'product.identifier.not_blank')]
-    #[Assert\Ulid(message: 'product.identifier.ulid')]
+    #[Assert\Uuid(message: 'product.identifier.uuid', versions: 7)]
     #[CustomAssert\ProductExists]
     public string $productId;
 
