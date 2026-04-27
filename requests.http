@@ -1,22 +1,91 @@
-### Calculate Price
+### Calculate Price 1
 POST http://127.0.0.1:8337/calculate-price
 Accept: application/json
 Content-Type: application/json
 
 {
-  "product": 1,
+  "product": "019dce4e-f2fd-772c-8d07-dc7e967043c3",
   "taxNumber": "DE123456789",
-  "couponCode": "D15"
+  "couponCode": "A50"
 }
 
-### Execute Purchase
+# HTTP/1.1 200 OK
+# Host: 127.0.0.1:8337
+# {
+#   "finalPrice": 1131
+# }
+
+### Calculate Price 2
+POST http://127.0.0.1:8337/calculate-price
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": "019dce4e-f2fd-772c-8d07-dc7e967043c3",
+  "taxNumber": "IT12345678912",
+  "couponCode": "P10"
+}
+
+# HTTP/1.1 200 OK
+# Host: 127.0.0.1:8337
+# {
+#   "finalPrice": 1098
+# }
+
+### Execute Purchase 1
 POST http://127.0.0.1:8337/purchase
 Accept: application/json
 Content-Type: application/json
 
 {
-  "product": 1,
-  "taxNumber": "IT12345678900",
-  "couponCode": "D15",
+  "product": "019dce4e-f2fd-772c-8d07-dc7e967043c3",
+  "taxNumber": "DE123456789",
+  "couponCode": "P10",
   "paymentProcessor": "paypal"
 }
+
+# HTTP/1.1 200 OK
+# Host: 127.0.0.1:8337
+# {
+#   "message": "Payment successful",
+# }
+
+### Execute Purchase 2
+POST http://127.0.0.1:8337/purchase
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": "019dce4e-f2fd-772c-8d07-dc7e967043c3",
+  "taxNumber": "GR123456789",
+  "couponCode": "A50",
+  "paymentProcessor": "stripe"
+}
+
+# HTTP/1.1 200 OK
+# Host: 127.0.0.1:8337
+# {
+#   "message": "Payment successful",
+# }
+
+### Execute Purchase 3
+POST http://127.0.0.1:8337/purchase
+Accept: application/json
+Content-Type: application/json
+
+{
+  "product": "019dce4f-0f60-7975-a21d-c0fb2179cbf6",
+  "taxNumber": "GR123456789",
+  "couponCode": "A50",
+  "paymentProcessor": "paypal"
+}
+
+# HTTP/1.1 500 OK
+# Host: 127.0.0.1:8337
+# {
+#   "errors": [
+#     {
+#       "message": "[#14271] Transaction \u0022c82711ca-7e67-41c8-9f35-5b965e645d12\u0022 failed: Too high price"
+#     }
+#   ]
+# }

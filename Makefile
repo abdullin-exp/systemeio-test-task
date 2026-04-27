@@ -35,6 +35,20 @@ console: ## Login in console.
 install: ## Install dependencies without running the whole application.
 	${DC_RUN} composer install
 
+# -----------------------------
+# NEW COMMANDS
+# -----------------------------
+
+env: ## Create .env from template
+	@echo "Creating .env file..."
+	@if [ ! -f .env ]; then cp .env.template .env; else echo ".env already exists"; fi
+
+migrate: ## Run migrations
+	${DC_EXEC} php bin/console doctrine:migrations:migrate --no-interaction
+
+seed: ## Load fixtures
+	${DC_EXEC} php bin/console doctrine:fixtures:load --no-interaction
+
 success-message:
 	@echo "You can now access the application at http://localhost:8337"
 	@echo "Good luck! 🚀"
