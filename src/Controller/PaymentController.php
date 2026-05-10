@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\DTO\Request\PurchaseRequestDTO;
+use App\Enum\PaymentProcessor;
 use App\Exception\InternalException;
 use App\Service\Payment\PaymentProcessorFactory;
 use App\Service\Price\PricingService;
@@ -38,7 +39,7 @@ final class PaymentController extends AbstractController
         );
 
         $paymentProcessor = $this->paymentProcessorFactory
-            ->resolve($dto->paymentProcessor);
+            ->resolve(PaymentProcessor::from($dto->paymentProcessor));
 
         $paymentProcessor->process($finalPrice);
 

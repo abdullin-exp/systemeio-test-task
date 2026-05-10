@@ -31,9 +31,9 @@ class PurchaseRequestDTO
     #[SerializedName('paymentProcessor')]
     #[Assert\NotBlank(message: 'paymentProcessor.not_blank')]
     #[Assert\Choice(
-        callback: [PaymentProcessor::class, 'cases'],
+        callback: [PaymentProcessor::class, 'values'],
         message: 'paymentProcessor.unsupported'
     )]
-    public PaymentProcessor $paymentProcessor;
+    public string $paymentProcessor;
 
 }
