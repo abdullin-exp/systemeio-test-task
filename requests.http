@@ -9,10 +9,10 @@ Content-Type: application/json
   "couponCode": "A50"
 }
 
-# HTTP/1.1 200 OK
+### HTTP/1.1 200 OK
 # Host: 127.0.0.1:8337
 # {
-#   "finalPrice": 1131
+#   "finalPrice": 11841
 # }
 
 ### Calculate Price 2
@@ -26,10 +26,10 @@ Content-Type: application/json
   "couponCode": "P10"
 }
 
-# HTTP/1.1 200 OK
+### HTTP/1.1 200 OK
 # Host: 127.0.0.1:8337
 # {
-#   "finalPrice": 1098
+#   "finalPrice": 10980
 # }
 
 ### Execute Purchase 1
@@ -44,7 +44,7 @@ Content-Type: application/json
   "paymentProcessor": "paypal"
 }
 
-# HTTP/1.1 200 OK
+### HTTP/1.1 200 OK
 # Host: 127.0.0.1:8337
 # {
 #   "message": "Payment successful",
@@ -62,7 +62,7 @@ Content-Type: application/json
   "paymentProcessor": "stripe"
 }
 
-# HTTP/1.1 200 OK
+### HTTP/1.1 200 OK
 # Host: 127.0.0.1:8337
 # {
 #   "message": "Payment successful",
@@ -80,7 +80,7 @@ Content-Type: application/json
   "paymentProcessor": "paypal"
 }
 
-# HTTP/1.1 500 OK
+### HTTP/1.1 500 OK
 # Host: 127.0.0.1:8337
 # {
 #   "errors": [
